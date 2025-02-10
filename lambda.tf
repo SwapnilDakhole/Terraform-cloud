@@ -4,10 +4,10 @@ module "profile_generator_lambda" {
 
   function_name = "profile-generator-lambda"
   description   = "Generates a new profile"
-  handler      = "com.deals_migration.DealsMigrationHandler::handleRequest"
-  runtime      = "java17"
+  handler       = "lambda_function.lambda_handler"  # Python function entry point
+  runtime       = "python3.12"
 
-  local_existing_package = "${path.module}/java/assignment-0.0.1-SNAPSHOT-lambda-package.zip"
+  local_existing_package = "${path.module}/java/lambda_function.zip"
 
   memory_size  = 1024
   timeout      = 60
