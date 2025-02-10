@@ -7,7 +7,7 @@ module "profile_generator_lambda" {
   handler       = "lambda_function.lambda_handler"  # Python function entry point
   runtime       = "python3.12"
 
-  local_existing_package = "${path.module}/lambda_function/lambda_function.zip"
+  local_existing_package = "${path.module}/lambda_code"
 
   memory_size  = 1024
   timeout      = 60
